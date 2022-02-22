@@ -1,19 +1,19 @@
 .jumbotron {
-    padding: 1em 1em;
+  padding: 1em 1em;
 }
 
 #order-alert {
-    display: none;
+  display: none;
 }
 
 #ingredient-alert {
-    display: none;
+  display: none;
 }
 
 #size-alert {
-    display: none;
+  display: none;
 }
 
 .order {
-    display: none;
+  display: none;
 }

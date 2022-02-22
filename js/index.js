@@ -93,8 +93,8 @@ function createSizeTemplate(size) {
 }
 
 function loadInformation() {
-    fetchIngredients()
-    fetchOrderSizes()
+    fetchIngredients();
+    fetchOrderSizes();
 }
 
 
