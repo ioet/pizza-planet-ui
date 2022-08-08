@@ -2,15 +2,10 @@
   padding: 1em 1em;
 }
 
+#ingredient-alert,
+#size-alert,
+#beverage-alert,
 #order-alert {
-  display: none;
-}
-
-#ingredient-alert {
-  display: none;
-}
-
-#size-alert {
   display: none;
 }
 
