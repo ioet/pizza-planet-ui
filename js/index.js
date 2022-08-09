@@ -32,8 +32,14 @@ orderForm.submit((event) => {
  */
 function getOrderData() {
   let ingredients = [];
+  let beverages = [];
+
   $.each($("input[name='ingredients']:checked"), function (el) {
     ingredients.push($(this).val());
+  });
+
+  $.each($("input[name='beverages']:checked"), function (el) {
+    beverages.push($(this).val());
   });
 
   return {
@@ -43,6 +49,7 @@ function getOrderData() {
     client_phone: $("input[name='phone']").val(),
     size_id: $("input[name='size']:checked").val(),
     ingredients,
+    beverages,
   };
 }
 
