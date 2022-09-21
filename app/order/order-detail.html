@@ -30,14 +30,17 @@
         <ul class="navbar-nav">
           <!-- LINKS -->
 
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="/">Build Your Pizza!</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item active">
             <a class="nav-link" href="/app/order/orders.html">Orders</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/app/ingredient/ingredients.html">Ingredients</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/app/beverage/beverages.html">Beverages</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/app/size/sizes.html">Sizes</a>
@@ -89,8 +92,9 @@
       <table class="table bg-white table-bordered">
         <thead class="thead-dark">
           <tr>
-            <th class="w-50">Size</th>
-            <th class="w-50">Ingredients</th>
+            <th class="w-33">Size</th>
+            <th class="w-33">Ingredients</th>
+            <th class="w-33">Beverage</th>
           </tr>
         </thead>
         <tbody>
@@ -99,13 +103,18 @@
               <p id="size">{{size.name}} - ${{size.price}}</p>
             </td>
             <td id="ingredients">
-              {{#detail}}
+              {{#ingradient_detail}}
               <p>{{ingredient.name}} - ${{ingredient_price}}</p>
-              {{/detail}}
+              {{/ingradient_detail}}
+            </td>
+            <td id="beverages">
+              {{#beverage_detail}}
+              <p>{{beverage.name}} - ${{beverage_price}}</p>
+              {{/beverage_detail}}
             </td>
           </tr>
           <tr class="table-active">
-            <th id="total" class="text-right" colspan="2">Total: ${{total_price}}</th>
+            <th id="total" class="text-right" colspan="3">Total: ${{total_price}}</th>
           </tr>
         </tbody>
       </table>

@@ -14,7 +14,7 @@
     />
     <link rel="stylesheet" href="/css/styles.css" />
 
-    <title>L'ultima Cena Pizzeria! - Sizes</title>
+    <title>L'ultima Cena Pizzeria! - Beverage</title>
   </head>
 
   <body>
@@ -39,10 +39,10 @@
           <li class="nav-item">
             <a class="nav-link" href="/app/ingredient/ingredients.html">Ingredients</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item active">
             <a class="nav-link" href="/app/beverage/beverages.html">Beverages</a>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="/app/size/sizes.html">Sizes</a>
           </li>
         </ul>
@@ -53,9 +53,9 @@
 
     <div class="container">
       <div class="jumbotron">
-        <div id="sizes-list">
-          <h2 class="text-center">Sizes</h2>
-          <table id="sizes" class="table bg-white table-bordered table-hover">
+        <div id="beverage-list">
+          <h2 class="text-center">Beverages</h2>
+          <table id="beverages" class="table bg-white table-bordered table-hover">
             <thead class="thead-dark">
               <tr class="d-flex">
                 <th class="col-2 text-center">ID</th>
@@ -69,19 +69,23 @@
         </div>
 
         <div class="text-center">
-          <a class="btn btn-warning btn-lg add-size" href="/app/size/add-size.html">Add New Size</a>
+          <a class="btn btn-warning btn-lg add-beverage" href="/app/beverage/add-beverage.html"
+            >Add New Beverage</a
+          >
         </div>
       </div>
     </div>
 
-    <template id="size-item-template">
+    <template id="beverage-item-template">
       <tr class="d-flex">
         <td class="col-2 text-center">{{_id}}</td>
         <td class="col-4">{{name}}</td>
         <td class="col-3">${{price}}</td>
         <td class="col-3 text-center">
           <div class="text-center">
-            <a class="btn btn-success btn-sm update-size disabled" href="/app/size/update-size.html?_id={{_id}}"
+            <a
+              class="btn btn-success btn-sm update-beverage"
+              href="/app/beverage/update-beverage.html?_id={{_id}}"
               >Update</a
             >
           </div>
@@ -112,6 +116,6 @@
       crossorigin="anonymous"
     ></script>
 
-    <script src="/js/size/size.js"></script>
+    <script src="/js/beverage/beverage.js"></script>
   </body>
 </html>
