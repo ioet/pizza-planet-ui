@@ -14,7 +14,7 @@
     />
     <link rel="stylesheet" href="/css/styles.css" />
 
-    <title>L'ultima Cena Pizzeria! - Create Ingredient</title>
+    <title>L'ultima Cena Pizzeria! - Beverages</title>
   </head>
 
   <body>
@@ -49,61 +49,49 @@
       </nav>
     </header>
 
-    <!-- FORM PART -->
+    <!-- TABLE -->
 
     <div class="container">
-      <!-- Notification Area -->
-
-      <div id="ingredient-alert" class="alert alert-success" role="alert">
-        <h4 class="alert-heading">Great!</h4>
-        <p>Your ingredient was updated successfully</p>
-      </div>
-
       <div class="jumbotron">
-        <h2 class="text-center">Update Ingredient!</h2>
+        <div id="beverage-list">
+          <h2 class="text-center">Beverages</h2>
+          <table id="beverages" class="table bg-white table-bordered table-hover">
+            <thead class="thead-dark">
+              <tr class="d-flex">
+                <th class="col-2 text-center">ID</th>
+                <th class="col-4 text-center">Name</th>
+                <th class="col-3 text-center">Price</th>
+                <th class="col-3 text-center">Actions</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
 
-        <form id="ingredient-form">
-          <!-- INGREDIENT DATA -->
-
-          <div class="form-group row">
-            <label class="col-sm-2 col-form-label">ID: </label>
-            <div class="col-sm-10">
-              <input id="_id" disabled name="_id" type="text" class="form-control" placeholder="ID" />
-            </div>
-          </div>
-
-          <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Name: </label>
-            <div class="col-sm-10">
-              <input id="name" required name="name" type="text" class="form-control" placeholder="Name" />
-            </div>
-          </div>
-
-          <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Price: </label>
-            <div class="col-sm-10">
-              <input
-                id="price"
-                required
-                name="price"
-                type="number"
-                step="0.01"
-                min="0"
-                max="10"
-                class="form-control"
-                placeholder="Price"
-              />
-            </div>
-          </div>
-
-          <!-- ingredient BUTTON -->
-
-          <div class="text-center">
-            <button type="submit" class="btn btn-warning btn-lg">Submit</button>
-          </div>
-        </form>
+        <div class="text-center">
+          <a class="btn btn-warning btn-lg add-beverage" href="/app/beverage/add-beverage.html"
+            >Add New Beverage</a
+          >
+        </div>
       </div>
     </div>
+
+    <template id="beverage-item-template">
+      <tr class="d-flex">
+        <td class="col-2 text-center">{{_id}}</td>
+        <td class="col-4">{{name}}</td>
+        <td class="col-3">${{price}}</td>
+        <td class="col-3 text-center">
+          <div class="text-center">
+            <a
+              class="btn btn-success btn-sm update-beverage"
+              href="/app/beverage/update-beverage.html?_id={{_id}}"
+              >Update</a
+            >
+          </div>
+        </td>
+      </tr>
+    </template>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -122,13 +110,12 @@
       integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
       crossorigin="anonymous"
     ></script>
-
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.0/mustache.js"
       integrity="sha256-ILqMXUXPam8LdBwbq5W6r1m0NxeP8ydLFqrYN+bMCeI="
       crossorigin="anonymous"
     ></script>
 
-    <script src="/js/ingredient/update-ingredient.js"></script>
+    <script src="/js/beverage/beverage.js"></script>
   </body>
 </html>
