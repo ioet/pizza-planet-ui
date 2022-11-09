@@ -14,7 +14,7 @@
     />
     <link rel="stylesheet" href="/css/styles.css" />
 
-    <title>L'ultima Cena Pizzeria! - Create Ingredient</title>
+    <title>L'ultima Cena Pizzeria! - Create beverage</title>
   </head>
 
   <body>
@@ -27,28 +27,21 @@
     <div class="container">
       <!-- Notification Area -->
 
-      <div id="ingredient-alert" class="alert alert-success" role="alert">
+      <div id="beverage-alert" class="alert alert-success" role="alert">
         <h4 class="alert-heading">Great!</h4>
-        <p>Your ingredient was updated successfully</p>
+        <p>Your beverage was accepted successfully</p>
       </div>
 
       <div class="jumbotron">
-        <h2 class="text-center">Update Ingredient!</h2>
+        <h2 class="text-center">Add new Beverage!</h2>
 
-        <form id="ingredient-form">
-          <!-- INGREDIENT DATA -->
-
-          <div class="form-group row">
-            <label class="col-sm-2 col-form-label">ID: </label>
-            <div class="col-sm-10">
-              <input id="_id" disabled name="_id" type="text" class="form-control" placeholder="ID" />
-            </div>
-          </div>
+        <form id="beverage-form">
+          <!-- beverage DATA -->
 
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Name: </label>
             <div class="col-sm-10">
-              <input id="name" required name="name" type="text" class="form-control" placeholder="Name" />
+              <input required name="name" type="text" class="form-control" placeholder="Name" />
             </div>
           </div>
 
@@ -56,7 +49,6 @@
             <label class="col-sm-2 col-form-label">Price: </label>
             <div class="col-sm-10">
               <input
-                id="price"
                 required
                 name="price"
                 type="number"
@@ -69,7 +61,7 @@
             </div>
           </div>
 
-          <!-- ingredient BUTTON -->
+          <!-- Beverage BUTTON -->
 
           <div class="text-center">
             <button type="submit" class="btn btn-warning btn-lg">Submit</button>
@@ -102,7 +94,7 @@
       crossorigin="anonymous"
     ></script>
 
-    <script src="/js/ingredient/update-ingredient.js"></script>
+    <script src="/js/beverage/add-beverage.js"></script>
     <script src="/components/header.js"></script> 
   </body>
 </html>

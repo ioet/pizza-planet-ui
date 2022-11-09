@@ -20,31 +20,7 @@
   <body>
     <!-- HEADER -->
 
-    <header class="header-section container-fluid">
-      <nav class="navbar navbar-expand navbar-dark bg-dark">
-        <a class="navbar-brand" href="/">
-          <img src="/images/image4.png" width="50" height="50" class="d-inline-block align-top" alt="" />
-          L'ultima Cena
-        </a>
-        <ul class="navbar-nav mr-auto"></ul>
-        <ul class="navbar-nav">
-          <!-- LINKS -->
-
-          <li class="nav-item active">
-            <a class="nav-link" href="/">Build Your Pizza!</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/app/order/orders.html">Orders</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/app/ingredient/ingredients.html">Ingredients</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/app/size/sizes.html">Sizes</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <page-header></page-header>
 
     <!-- Order Detail -->
 
@@ -89,8 +65,9 @@
       <table class="table bg-white table-bordered">
         <thead class="thead-dark">
           <tr>
-            <th class="w-50">Size</th>
-            <th class="w-50">Ingredients</th>
+            <th class="w-auto">Size</th>
+            <th class="w-auto">Ingredients</th>
+            <th class="w-auto">Beverage</th>
           </tr>
         </thead>
         <tbody>
@@ -100,12 +77,21 @@
             </td>
             <td id="ingredients">
               {{#detail}}
-              <p>{{ingredient.name}} - ${{ingredient_price}}</p>
+              {{#ingredient}}
+                <p>{{name}} - ${{total_detail_price}}</p>
+              {{/ingredient}}
+              {{/detail}}
+            </td>
+            <td id="beverages">
+              {{#detail}}
+              {{#beverage}}
+                <p>{{name}} - ${{total_detail_price}}</p>
+              {{/beverage}}
               {{/detail}}
             </td>
           </tr>
           <tr class="table-active">
-            <th id="total" class="text-right" colspan="2">Total: ${{total_price}}</th>
+            <th id="total" class="text-right" colspan="3">Total: ${{total_price}}</th>
           </tr>
         </tbody>
       </table>
@@ -132,7 +118,7 @@
       integrity="sha256-ILqMXUXPam8LdBwbq5W6r1m0NxeP8ydLFqrYN+bMCeI="
       crossorigin="anonymous"
     ></script>
-
     <script src="/js/order/order-detail.js"></script>
+    <script src="/components/header.js"></script> 
   </body>
 </html>
