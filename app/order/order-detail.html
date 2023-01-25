@@ -108,13 +108,13 @@
               {{/detail}}
             </td>
             <td id="beverages">
-              {{#detail}}
+              {{#beverage_detail}}
               <p>{{beverage.name}} - ${{beverage_price}}</p>
-              {{/detail}}
+              {{/beverage_detail}}
             </td>
           </tr>
           <tr class="table-active">
-            <th id="total" class="text-right" colspan="2">Total: ${{total_price}}</th>
+            <th id="total" class="text-right" colspan="3">Total: ${{total_price}}</th>
           </tr>
         </tbody>
       </table>
