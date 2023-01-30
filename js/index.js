@@ -1,3 +1,6 @@
+import { insertDataToTable } from './assets/index.js'
+
+
 /**
  * POST the order on /pizza
  * @param order 
@@ -25,20 +28,27 @@ let orderForm = $("#order-form");
 orderForm.submit(event => {
 
     let order = getOrderData();
-    postOrder(order);
+    console.log(order)
+    // postOrder(order);
 
     event.preventDefault();
     event.currentTarget.reset();
 });
 
+function getData(name) {
+    let data = [];
+    $.each($(`input[name=${name}]:checked`), function (el) {
+        data.push($(this).val());
+    });
+    return data
+}
+
 /**
  * Gets the order data with JQuery
  */
 function getOrderData() {
-    let ingredients = [];
-    $.each($("input[name='ingredients']:checked"), function (el) {
-        ingredients.push($(this).val());
-    });
+    const ingredients = getData("ingredients");
+    const beverages = getData("beverages");
 
     return {
         client_name: $("input[name='name']").val(),
@@ -46,7 +56,8 @@ function getOrderData() {
         client_address: $("input[name='address']").val(),
         client_phone: $("input[name='phone']").val(),
         size_id: $("input[name='size']:checked").val(),
-        ingredients
+        ingredients,
+        beverages
     };
 }
 
@@ -62,39 +73,11 @@ function showNotification() {
 
 // Gather information in a dynamic way
 
-function fetchIngredients() {
-    fetch('http://127.0.0.1:5000/ingredient/')
-        .then(response => response.json())
-        .then(ingredients => {
-            let rows = ingredients.map(element => createIngredientTemplate(element));
-            let table = $("#ingredients tbody");
-            table.append(rows);
-        });
-}
-
-function fetchOrderSizes() {
-    fetch('http://127.0.0.1:5000/size/')
-        .then(response => response.json())
-        .then(sizes => {
-            let rows = sizes.map(element => createSizeTemplate(element));
-            let table = $("#sizes tbody");
-            table.append(rows);
-        });
-}
-
-function createIngredientTemplate(ingredient) {
-    let template = $("#ingredients-template")[0].innerHTML;
-    return Mustache.render(template, ingredient);
-}
-
-function createSizeTemplate(size) {
-    let template = $("#sizes-template")[0].innerHTML;
-    return Mustache.render(template, size);
-}
 
 function loadInformation() {
-    fetchIngredients();
-    fetchOrderSizes();
+    insertDataToTable("ingredient", "#ingredients-template", "#ingredients");
+    insertDataToTable("size", "#sizes-template", "#sizes");
+    insertDataToTable("beverage", "#beverages-template", "#beverages")
 }
 
 

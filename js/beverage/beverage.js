@@ -1,7 +1,7 @@
 import { insertDataToTable } from '../assets/index.js'
 
-const endpointName = "size";
-const ingredientTemplate = "#size-item-template";
-const tableId = "#sizes";
+const endpointName = "beverage";
+const ingredientTemplate = "#beverage-item-template";
+const tableId = "#beverage";
 
 insertDataToTable(endpointName, ingredientTemplate, tableId);
