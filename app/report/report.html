@@ -3,7 +3,10 @@
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
     <!-- Bootstrap CSS -->
     <link
@@ -14,7 +17,7 @@
     />
     <link rel="stylesheet" href="/css/styles.css" />
 
-    <title>L'ultima Cena Pizzeria! - Create Size</title>
+    <title>L'ultima Cena Pizzeria! - Sizes</title>
   </head>
 
   <body>
@@ -23,7 +26,13 @@
     <header class="header-section container-fluid">
       <nav class="navbar navbar-expand navbar-dark bg-dark">
         <a class="navbar-brand" href="/">
-          <img src="/images/image4.png" width="50" height="50" class="d-inline-block align-top" alt="" />
+          <img
+            src="/images/image4.png"
+            width="50"
+            height="50"
+            class="d-inline-block align-top"
+            alt=""
+          />
           L'ultima Cena
         </a>
         <ul class="navbar-nav mr-auto"></ul>
@@ -37,13 +46,17 @@
             <a class="nav-link" href="/app/order/orders.html">Orders</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/app/ingredient/ingredients.html">Ingredients</a>
+            <a class="nav-link" href="/app/ingredient/ingredients.html"
+              >Ingredients</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/app/beverage/beverages.html"
+              >Beverages</a
+            >
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/app/size/sizes.html">Sizes</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/app/beverage/beverage.html">Beverages</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/app/report/report.html">Report</a>
@@ -52,53 +65,55 @@
       </nav>
     </header>
 
-    <!-- FORM PART -->
+    <!-- TABLE -->
 
     <div class="container">
-      <!-- Notification Area -->
-
-      <div id="size-alert" class="alert alert-success" role="alert">
-        <h4 class="alert-heading">Great!</h4>
-        <p>Your size was accepted successfully</p>
-      </div>
-
       <div class="jumbotron">
-        <h2 class="text-center">Add new Size!</h2>
-
-        <form id="size-form">
-          <!-- SIZE DATA -->
-
-          <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Name: </label>
-            <div class="col-sm-10">
-              <input required name="name" type="text" class="form-control" placeholder="Name" />
-            </div>
-          </div>
-
-          <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Price: </label>
-            <div class="col-sm-10">
-              <input
-                required
-                name="price"
-                type="number"
-                step="0.01"
-                min="0"
-                max="30"
-                class="form-control"
-                placeholder="Price"
-              />
-            </div>
-          </div>
-
-          <!-- SIZE BUTTON -->
-
-          <div class="text-center">
-            <button type="submit" class="btn btn-warning btn-lg">Submit</button>
-          </div>
-        </form>
+        <div id="report-list">
+          <h2 class="text-center">Report</h2>
+          <table id="report" class="table bg-white table-bordered table-hover">
+            <thead class="thead-dark">
+              <tr class="d-flex">
+                <th class="col-4 text-center">Most requested ingredient</th>
+                <th class="col-4 text-center">Month with more revenue</th>
+                <th class="col-4 text-center">Top 3 best customers</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
       </div>
     </div>
+
+    <template id="report-template">
+      <tr class="d-flex">
+        <td class="col-4 d-flex align-items-center">
+          <p>
+            {{#most_requested_ingredient}}
+            Ingredient name: {{name}}<br />
+            Number of times requested: {{times}}
+            {{/most_requested_ingredient}}
+          </p>
+        </td>
+        <td class="col-4 d-flex align-items-center">
+          <p>
+            {{#month_with_more_revenue}}
+            Month: {{month}} <br />
+            Revenue: {{revenue}}
+            {{/month_with_more_revenue}}
+          </p>
+        </td>
+        <td class="col-4">
+          {{#best_customers}}
+          <p>
+            Total purchase: {{total_purchase}}<br />
+            Client name: {{name}}<br />
+            Client dni: {{dni}}
+          </p>
+          {{/best_customers}}
+        </td>
+      </tr>
+    </template>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -117,13 +132,12 @@
       integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
       crossorigin="anonymous"
     ></script>
-
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.0/mustache.js"
       integrity="sha256-ILqMXUXPam8LdBwbq5W6r1m0NxeP8ydLFqrYN+bMCeI="
       crossorigin="anonymous"
     ></script>
 
-    <script src="/js/size/add-size.js"></script>
+    <script src="/js/report/report.js"></script>
   </body>
 </html>
