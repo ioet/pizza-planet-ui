@@ -21,3 +21,20 @@
 .order {
   display: none;
 }
+
+.ingredient-most-requested {
+  border: solid 2px black;
+  padding: 12px;
+  margin-bottom: 10px;
+}
+
+.month-highest-revenue {
+  border: solid 2px black;
+  padding: 12px;
+  margin-bottom: 10px;
+}
+
+.best-clients {
+  border: solid 2px black;
+  padding: 12px;
+}

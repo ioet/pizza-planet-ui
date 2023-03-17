@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+
+    <title>L'ultima Cena Pizzeria! - Create order</title>
+  </head>
+
+  <body>
+    <!-- HEADER -->
+
+    <header class="header-section container-fluid">
+      <nav class="navbar navbar-expand navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">
+          <img src="/images/image4.png" width="50" height="50" class="d-inline-block align-top" alt="" />
+          L'ultima Cena
+        </a>
+        <ul class="navbar-nav mr-auto"></ul>
+        <ul class="navbar-nav">
+          <!-- LINKS -->
+
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Build Your Pizza!</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/app/order/orders.html">Orders</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/app/ingredient/ingredients.html">Ingredients</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/app/size/sizes.html">Sizes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/app/beverage/beverages.html">Beverages</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/app/report/report.html">Report</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/app/report/report.html">Report</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h2 class="text-center">Report!</h2>
+            <template id="ingredient-report-template">            
+                <div class="ingredient-most-requested">
+                    <h3> Ingredient most requested: </h3>
+                    <p>Ingredient: {{most_requested_ingredient.ingredient}}</p>
+                    <p>Times requested: {{most_requested_ingredient.requested_times}}</p>
+                </div>
+                <div class="month-highest-revenue">
+                    <h3> Month with the most revenue: </h3>
+                    <p>Month: {{month_with_the_higest_revenue.month}}</p>
+                    <p>Total: {{month_with_the_higest_revenue.revenue}}</p>
+                </div>
+                <div class="best-clients">
+                    <h3> Best Clients: </h3>
+                    <h5>First:</h5>
+                    <p>Name: {{best_clients.first.name}}</p>
+                    <p>Total: {{best_clients.first.total}}</p>
+                    <h5>Second:</h5>
+                    <p>Name: {{best_clients.second.name}}</p>
+                    <p>Total: {{best_clients.second.total}}</p>
+                    <h5>Third:</h5>
+                    <p>Name: {{best_clients.third.name}}</p>
+                    <p>Total: {{best_clients.third.total}}</p>
+                </div>
+            </template>
+        </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.0/mustache.js"
+      integrity="sha256-ILqMXUXPam8LdBwbq5W6r1m0NxeP8ydLFqrYN+bMCeI="
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="/js/report/report.js"></script>
+  </body>
+</html>
