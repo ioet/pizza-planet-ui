@@ -10,6 +10,10 @@
   display: none;
 }
 
+#beverage-alert {
+  display: none;
+}
+
 #size-alert {
   display: none;
 }
