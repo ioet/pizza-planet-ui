@@ -78,19 +78,19 @@
             <section class="report">
                 <div class="multiple-top">
                     <a href="#ingredient-section">
-                        <div class="top-box">
+                        <div class="top-box bg-red">
                             <h3 id="top-ingredient">Top Ingredient</h3>
                             <span id="top-ingredient-requests">Requests: ###</span>
                         </div>
                     </a>
                     <a href="#revenue-by-month-section">
-                        <div class="top-box">
+                        <div class="top-box bg-blue">
                             <h3 id="top-revenue-month">Top Revenue Month</h3>
                             <span id="top-revenue-month-revenue">USD$###</span>
                         </div>
                     </a>
                     <a href="#revenue-by-customer-section">
-                        <div class="top-box">
+                        <div class="top-box bg-yellow text-dark">
                             <h3 id="top-customer">Top Customer 3</h3>
                             <span id="top-customer-revenue">USD$###</span>
                         </div>
@@ -103,40 +103,45 @@
                 <div class="chart-wrapper">
                     <canvas id="ingredient-chart"></canvas>
                 </div>
-                <div class="single-top">
+                <div class="single-top bg-red">
                     <h3>Most Requested Ingredient</h3>
                     <h4 id="ingredient-name">Ingredient name</h4>
                     <span id="ingredient-requests">Requests: ###</span>
                 </div>
             </section>
 
+            <div class="section-divider"></div>
+
             <section id="revenue-by-month-section" class="report">
                 <h2>Revenue By Month</h2>
                 <div class="chart-wrapper">
                     <canvas id="revenue-by-month-chart"></canvas>
                 </div>
-                <div class="single-top">
+                <div class="single-top bg-blue">
                     <h3>Top Revenue Month</h3>
                     <h4 id="month-name">Month name</h4>
                     <span id="revenue-by-month">Revenue: USD$###</span>
                 </div>
             </section>
 
+            <div class="section-divider"></div>
+
             <section id="revenue-by-customer-section" class="report">
                 <h2>Revenue By Customer</h2>
                 <div class="chart-wrapper">
                     <canvas id="revenue-by-customer-chart"></canvas>
                 </div>
+                <h2>Top Customers</h2>
                 <div class="multiple-top">
-                    <div class="top-box">
+                    <div class="top-box bg-yellow text-dark">
                         <h3 id="top-customer-2">Top Customer 2</h3>
                         <span id="top-customer-2-revenue">USD$###</span>
                     </div>
-                    <div class="top-box">
+                    <div class="top-box bg-yellow text-dark">
                         <h3 id="top-customer-1">Top Customer 1</h3>
                         <span id="top-customer-1-revenue">USD$###</span>
                     </div>
-                    <div class="top-box">
+                    <div class="top-box bg-yellow text-dark">
                         <h3 id="top-customer-3">Top Customer 3</h3>
                         <span id="top-customer-3-revenue">USD$###</span>
                     </div>
