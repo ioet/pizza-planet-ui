@@ -4,7 +4,7 @@ const ingredientData = {
     labels: ingredientReport.labels,
     datasets: [
         {
-            label: "My First Dataset",
+            label: "Ingredient requests",
             data: ingredientReport.data,
             backgroundColor: [
                 "rgb(255, 99, 132)",

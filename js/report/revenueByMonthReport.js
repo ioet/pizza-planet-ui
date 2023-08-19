@@ -4,7 +4,7 @@ const revenueByMonthData = {
     labels: revenueByMonthReport.labels,
     datasets: [
         {
-            label: "My First Dataset",
+            label: "Monthly revenue",
             data: revenueByMonthReport.data,
             fill: true,
             backgroundColor: ["rgb(255, 99, 132)"],

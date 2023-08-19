@@ -6,7 +6,7 @@ const revenueByCustomerData = {
     labels: revenueByCustomerReport.labels,
     datasets: [
         {
-            label: "My First Dataset",
+            label: "Customer revenue",
             data: revenueByCustomerReport.data,
             fill: true,
             backgroundColor: [
