@@ -1,0 +1,70 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 3em 0;
+    gap: 6em;
+}
+
+.report {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3em;
+}
+
+.report > h2 {
+    font-size: 3em;
+}
+
+.chart-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    height: 80vh;
+}
+
+.single-top {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 2em;
+    padding: 2em 0;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 99, 132);
+    border-radius: 10px;
+}
+
+.single-top > h3 {
+    font-size: 1.5em;
+}
+
+.single-top > h4 {
+    font-size: 3em;
+}
+
+.single-top > span {
+    font-size: 1.5em;
+}
+
+.multiple-top {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 2em;
+    padding: 2em;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+}
+
+.top-box {
+    width: 30vw;
+    background-color: rgb(255, 99, 132);
+    padding: 6em 3em;
+    border-radius: 10px;
+}

@@ -13,8 +13,9 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/report.css" />
 
-    <title>L'ultima Cena Pizzeria! - Create Ingredient</title>
+    <title>L'ultima Cena Pizzeria! - Order details</title>
   </head>
 
   <body>
@@ -52,55 +53,57 @@
       </nav>
     </header>
 
-    <!-- FORM PART -->
-
-    <div class="container">
-      <!-- Notification Area -->
-
-      <div id="ingredient-alert" class="alert alert-success" role="alert">
-        <h4 class="alert-heading">Great!</h4>
-        <p>Your ingredient was accepted successfully</p>
-      </div>
-
-      <div class="jumbotron">
-        <h2 class="text-center">Add new Ingredient!</h2>
-
-        <form id="ingredient-form">
-          <!-- INGREDIENT DATA -->
-
-          <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Name: </label>
-            <div class="col-sm-10">
-              <input required name="name" type="text" class="form-control" placeholder="Name" />
-            </div>
+    <div class="wrapper">
+      <section class="report">
+        <h2>Top Ingredients</h2>
+        <div class="chart-wrapper">
+          <canvas id="ingredient-chart"></canvas>
+        </div>
+        <div class="single-top">
+          <h3>Most Requested Ingredient</h3>
+          <h4 id="ingredient-name">Ingredient name</h4>
+          <span id="ingredient-requests">Requests: ###</span>
+        </div>
+      </section>
+      
+      <section class="report">
+        <h2>Revenue By Month</h2>
+        <div class="chart-wrapper">
+          <canvas id="revenue-by-month-chart"></canvas>
+        </div>
+        <div class="single-top">
+          <h3>Top Revenue Month</h3>
+          <h4 id="ingredient-name">Month name</h4>
+          <span id="revenue-by-month">Revenue: USD$###</span>
+        </div>
+      </section>
+      
+      <section class="report">
+        <h2>Revenue By Customer</h2>
+        <div class="chart-wrapper">
+          <canvas id="revenue-by-customer-chart"></canvas>
+        </div>
+        <div class="multiple-top">
+          <div class="top-box">
+            <h3 id="top-customer-2">Top Customer 2</h3>
+            <span id="top-customer-2-revenue">USD$###</span>
           </div>
-
-          <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Price: </label>
-            <div class="col-sm-10">
-              <input
-                required
-                name="price"
-                type="number"
-                step="0.01"
-                min="0"
-                max="10"
-                class="form-control"
-                placeholder="Price"
-              />
-            </div>
+          <div class="top-box">
+            <h3 id="top-customer-1">Top Customer 1</h3>
+            <span id="top-customer-1-revenue">USD$###</span>
           </div>
-
-          <!-- ingredient BUTTON -->
-
-          <div class="text-center">
-            <button type="submit" class="btn btn-warning btn-lg">Submit</button>
+          <div class="top-box">
+            <h3 id="top-customer-3">Top Customer 3</h3>
+            <span id="top-customer-3-revenue">USD$###</span>
           </div>
-        </form>
-      </div>
+        </div>
+      </section>
     </div>
+    
 
-    <!-- Optional JavaScript -->
+    <!-- Chart JS CDN Script -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -117,13 +120,18 @@
       integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
       crossorigin="anonymous"
     ></script>
-
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.0/mustache.js"
       integrity="sha256-ILqMXUXPam8LdBwbq5W6r1m0NxeP8ydLFqrYN+bMCeI="
       crossorigin="anonymous"
     ></script>
 
-    <script src="/js/ingredient/add-ingredient.js"></script>
+    <!-- Report Scripts -->
+    <script src="/js/report/reportData.js"></script>
+    <script src="/js/report/ingredientReport.js"></script>
+    <script src="/js/report/revenueByMonthReport.js"></script>
+    <script src="/js/report/revenueByCustomerReport.js"></script>
+    <script src="/js/report/reportTemplate.js"></script>
+    <script src="/js/report/loadCharts.js"></script>
   </body>
 </html>
