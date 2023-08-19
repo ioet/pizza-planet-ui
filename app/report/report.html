@@ -1,137 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
 
-    <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="/css/styles.css" />
-    <link rel="stylesheet" href="/css/report.css" />
+        <!-- Bootstrap CSS -->
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+            integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="/css/styles.css" />
+        <link rel="stylesheet" href="/css/report.css" />
 
-    <title>L'ultima Cena Pizzeria! - Order details</title>
-  </head>
+        <title>L'ultima Cena Pizzeria! - Order details</title>
+    </head>
 
-  <body>
-    <!-- HEADER -->
+    <body>
+        <!-- HEADER -->
 
-    <header class="header-section container-fluid">
-      <nav class="navbar navbar-expand navbar-dark bg-dark">
-        <a class="navbar-brand" href="/">
-          <img src="/images/image4.png" width="50" height="50" class="d-inline-block align-top" alt="" />
-          L'ultima Cena
-        </a>
-        <ul class="navbar-nav mr-auto"></ul>
-        <ul class="navbar-nav">
-          <!-- LINKS -->
+        <header class="header-section container-fluid">
+            <nav class="navbar navbar-expand navbar-dark bg-dark">
+                <a class="navbar-brand" href="/">
+                    <img
+                        src="/images/image4.png"
+                        width="50"
+                        height="50"
+                        class="d-inline-block align-top"
+                        alt=""
+                    />
+                    L'ultima Cena
+                </a>
+                <ul class="navbar-nav mr-auto"></ul>
+                <ul class="navbar-nav">
+                    <!-- LINKS -->
 
-          <li class="nav-item active">
-            <a class="nav-link" href="/">Build Your Pizza!</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/app/order/orders.html">Orders</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/app/ingredient/ingredients.html">Ingredients</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/app/beverage/beverage.html">Beverage</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/app/size/sizes.html">Sizes</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/app/report/report.html">Report</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Build Your Pizza!</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/app/order/orders.html"
+                            >Orders</a
+                        >
+                    </li>
+                    <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            href="/app/ingredient/ingredients.html"
+                            >Ingredients</a
+                        >
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/app/beverage/beverage.html"
+                            >Beverage</a
+                        >
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/app/size/sizes.html"
+                            >Sizes</a
+                        >
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/app/report/report.html"
+                            >Report</a
+                        >
+                    </li>
+                </ul>
+            </nav>
+        </header>
 
-    <div class="wrapper">
-      <section class="report">
-        <h2>Top Ingredients</h2>
-        <div class="chart-wrapper">
-          <canvas id="ingredient-chart"></canvas>
+        <div class="wrapper">
+            <section class="report">
+                <div class="multiple-top">
+                    <a href="#ingredient-section">
+                        <div class="top-box">
+                            <h3 id="top-ingredient">Top Ingredient</h3>
+                            <span id="top-ingredient-requests">Requests: ###</span>
+                        </div>
+                    </a>
+                    <a href="#revenue-by-month-section">
+                        <div class="top-box">
+                            <h3 id="top-revenue-month">Top Revenue Month</h3>
+                            <span id="top-revenue-month-revenue">USD$###</span>
+                        </div>
+                    </a>
+                    <a href="#revenue-by-customer-section">
+                        <div class="top-box">
+                            <h3 id="top-customer">Top Customer 3</h3>
+                            <span id="top-customer-revenue">USD$###</span>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <section id="ingredient-section" class="report">
+                <h2>Top Ingredients</h2>
+                <div class="chart-wrapper">
+                    <canvas id="ingredient-chart"></canvas>
+                </div>
+                <div class="single-top">
+                    <h3>Most Requested Ingredient</h3>
+                    <h4 id="ingredient-name">Ingredient name</h4>
+                    <span id="ingredient-requests">Requests: ###</span>
+                </div>
+            </section>
+
+            <section id="revenue-by-month-section" class="report">
+                <h2>Revenue By Month</h2>
+                <div class="chart-wrapper">
+                    <canvas id="revenue-by-month-chart"></canvas>
+                </div>
+                <div class="single-top">
+                    <h3>Top Revenue Month</h3>
+                    <h4 id="ingredient-name">Month name</h4>
+                    <span id="revenue-by-month">Revenue: USD$###</span>
+                </div>
+            </section>
+
+            <section id="revenue-by-customer-section" class="report">
+                <h2>Revenue By Customer</h2>
+                <div class="chart-wrapper">
+                    <canvas id="revenue-by-customer-chart"></canvas>
+                </div>
+                <div class="multiple-top">
+                    <div class="top-box">
+                        <h3 id="top-customer-2">Top Customer 2</h3>
+                        <span id="top-customer-2-revenue">USD$###</span>
+                    </div>
+                    <div class="top-box">
+                        <h3 id="top-customer-1">Top Customer 1</h3>
+                        <span id="top-customer-1-revenue">USD$###</span>
+                    </div>
+                    <div class="top-box">
+                        <h3 id="top-customer-3">Top Customer 3</h3>
+                        <span id="top-customer-3-revenue">USD$###</span>
+                    </div>
+                </div>
+            </section>
         </div>
-        <div class="single-top">
-          <h3>Most Requested Ingredient</h3>
-          <h4 id="ingredient-name">Ingredient name</h4>
-          <span id="ingredient-requests">Requests: ###</span>
-        </div>
-      </section>
-      
-      <section class="report">
-        <h2>Revenue By Month</h2>
-        <div class="chart-wrapper">
-          <canvas id="revenue-by-month-chart"></canvas>
-        </div>
-        <div class="single-top">
-          <h3>Top Revenue Month</h3>
-          <h4 id="ingredient-name">Month name</h4>
-          <span id="revenue-by-month">Revenue: USD$###</span>
-        </div>
-      </section>
-      
-      <section class="report">
-        <h2>Revenue By Customer</h2>
-        <div class="chart-wrapper">
-          <canvas id="revenue-by-customer-chart"></canvas>
-        </div>
-        <div class="multiple-top">
-          <div class="top-box">
-            <h3 id="top-customer-2">Top Customer 2</h3>
-            <span id="top-customer-2-revenue">USD$###</span>
-          </div>
-          <div class="top-box">
-            <h3 id="top-customer-1">Top Customer 1</h3>
-            <span id="top-customer-1-revenue">USD$###</span>
-          </div>
-          <div class="top-box">
-            <h3 id="top-customer-3">Top Customer 3</h3>
-            <span id="top-customer-3-revenue">USD$###</span>
-          </div>
-        </div>
-      </section>
-    </div>
-    
 
-    <!-- Chart JS CDN Script -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.0/mustache.js"
-      integrity="sha256-ILqMXUXPam8LdBwbq5W6r1m0NxeP8ydLFqrYN+bMCeI="
-      crossorigin="anonymous"
-    ></script>
+        <!-- Chart JS CDN Script -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <!-- Report Scripts -->
-    <script src="/js/report/reportData.js"></script>
-    <script src="/js/report/ingredientReport.js"></script>
-    <script src="/js/report/revenueByMonthReport.js"></script>
-    <script src="/js/report/revenueByCustomerReport.js"></script>
-    <script src="/js/report/reportTemplate.js"></script>
-    <script src="/js/report/loadCharts.js"></script>
-  </body>
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.0/mustache.js"
+            integrity="sha256-ILqMXUXPam8LdBwbq5W6r1m0NxeP8ydLFqrYN+bMCeI="
+            crossorigin="anonymous"
+        ></script>
+
+        <!-- Report Scripts -->
+        <script src="/js/report/reportData.js"></script>
+        <script src="/js/report/ingredientReport.js"></script>
+        <script src="/js/report/revenueByMonthReport.js"></script>
+        <script src="/js/report/revenueByCustomerReport.js"></script>
+        <script src="/js/report/reportTemplate.js"></script>
+        <script src="/js/report/loadCharts.js"></script>
+    </body>
 </html>

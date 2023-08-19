@@ -1,3 +1,17 @@
+html{
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
 .wrapper {
     display: flex;
     align-items: center;
@@ -28,6 +42,7 @@
 }
 
 .single-top {
+    color: white;
     display: flex;
     width: 100%;
     flex-direction: column;
@@ -52,6 +67,7 @@
 }
 
 .multiple-top {
+    color: white;
     display: flex;
     width: 100%;
     flex-wrap: wrap;
@@ -63,7 +79,7 @@
 }
 
 .top-box {
-    width: 30vw;
+    width: 25vw;
     background-color: rgb(255, 99, 132);
     padding: 6em 3em;
     border-radius: 10px;
