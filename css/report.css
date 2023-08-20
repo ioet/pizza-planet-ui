@@ -119,6 +119,14 @@ a:hover {
     border-radius: 10px;
 }
 
+.hoverable:hover {
+    transform: scale(1.1)
+}
+
+.ease {
+    transition: 250ms ease-in-out;
+}
+
 @media only screen and (max-width: 1200px) {
     .multiple-top {
         justify-content: center;
