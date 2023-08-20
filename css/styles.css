@@ -4,6 +4,19 @@ html, body {
   font-family: 'Roboto', sans-serif;
 }
 
+.header-section {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em 3em;
+}
+
 .jumbotron {
   padding: 1em 1em;
 }
