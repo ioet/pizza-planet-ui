@@ -17,3 +17,7 @@
 .order {
   display: none;
 }
+
+#beverage-alert {
+  display: none;
+}
