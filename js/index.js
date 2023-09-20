@@ -39,6 +39,11 @@ function getOrderData() {
     $.each($("input[name='ingredients']:checked"), function (el) {
         ingredients.push($(this).val());
     });
+
+    let beverages = [];
+    $.each($("input[name='beverages']:checked"), function (el) {
+        beverages.push($(this).val());
+    });
     
 
     return {
@@ -47,7 +52,7 @@ function getOrderData() {
         client_address: $("input[name='address']").val(),
         client_phone: $("input[name='phone']").val(),
         size_id: $("input[name='size']:checked").val(),
-        beverage_id: $("input[name='beverages']:checked").val(),
+        beverages,
         ingredients
     };
 }

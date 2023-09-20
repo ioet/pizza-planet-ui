@@ -102,13 +102,21 @@
             <td>
               <p id="size">{{size.name}} - ${{size.price}}</p>
             </td>
-            <td id="ingredients">
-              {{#detail}}
-              <p>{{ingredient.name}} - ${{ingredient_price}}</p>
-              {{/detail}}
+            <td id="Ingredients">
+              {{#each detail}}
+                {{#if this.Ingredients}}
+                <li>{{this.Ingredients}}</li>
+                {{/if}}
+              {{/each}}
+               
             </td>
-            <td>
-              <p id="beverage">{{beverage.name}} - ${{beverage.price}}</p>
+            <td id="Ingredients">
+              {{#each detail}}
+                {{#if this.Beverages}}
+                <li>{{this.Beverages}}</li>
+                {{/if}}
+              {{/each}}
+               
             </td>
           </tr>
           <tr class="table-active">
@@ -134,6 +142,7 @@
       integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.0/mustache.js"
       integrity="sha256-ILqMXUXPam8LdBwbq5W6r1m0NxeP8ydLFqrYN+bMCeI="
