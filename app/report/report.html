@@ -14,7 +14,7 @@
     />
     <link rel="stylesheet" href="/css/styles.css" />
 
-    <title>L'ultima Cena Pizzeria! - Ingredients</title>
+    <title>L'ultima Cena Pizzeria! - reports</title>
   </head>
 
   <body>
@@ -53,48 +53,44 @@
     </header>
 
     <!-- TABLE -->
-
+    <h1 class="text-center">Report</h1>
     <div class="container">
       <div class="jumbotron">
-        <div id="ingredient-list">
-          <h2 class="text-center">Ingredients</h2>
-          <table id="ingredients" class="table bg-white table-bordered table-hover">
+        <div id="report-list">
+          <h2 class="text-center">TOP 3 BUYERS</h2>
+          <table id="report" class="table bg-white table-breported table-hover">
             <thead class="thead-dark">
               <tr class="d-flex">
-                <th class="col-2 text-center">ID</th>
-                <th class="col-4 text-center">Name</th>
-                <th class="col-3 text-center">Price</th>
-                <th class="col-3 text-center">Actions</th>
+                <th class="col-12">Name</th>
+                <th class="col-4">DNI</th>
+                <th class="col-4">Address</th>
+                <th class="col-4">client_phone</th>
               </tr>
             </thead>
-            <tbody></tbody>
+             <tbody id="top-3-buyers">
+             </tbody>
           </table>
-        </div>
-
-        <div class="text-center">
-          <a class="btn btn-warning btn-lg add-ingredient" href="/app/ingredient/add-ingredient.html"
-            >Add New Ingredient</a
-          >
         </div>
       </div>
     </div>
+   
+   <div class="container">
+      <div class="jumbotron">
+          <h2 class="text-center">TOP ASKED INGREDIENT</h2>
+          <p id="ingredient-info"></p>
 
-    <template id="ingredient-item-template">
-      <tr class="d-flex">
-        <td class="col-2 text-center">{{_id}}</td>
-        <td class="col-4">{{name}}</td>
-        <td class="col-3">${{price}}</td>
-        <td class="col-3 text-center">
-          <div class="text-center">
-            <a
-              class="btn btn-success btn-sm update-ingredient"
-              href="/app/ingredient/update-ingredient.html?_id={{_id}}"
-              >Update</a
-            >
-          </div>
-        </td>
-      </tr>
-    </template>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="jumbotron">
+          <h2 class="text-center">MOST REVENUE MONTH</h2>
+          <p id="most-revenue-info"></p>
+
+      </div>
+    </div>
+
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -119,6 +115,6 @@
       crossorigin="anonymous"
     ></script>
 
-    <script src="/js/ingredient/ingredient.js"></script>
+    <script src="/js/report/report.js"></script>
   </body>
 </html>
